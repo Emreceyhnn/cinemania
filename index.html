@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinemania</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/main-dP-ofRqn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-ffxd55lU.css">
+  </head>
+  <body>
+    <header>
+  <div class="container">
+    <div class="logo-container">
+      <svg width="48" height="48">
+        <use href="/src/img/sprite.svg#icon-logo"></use>
+      </svg>
+      <h2>Cinemania</h2>
+    </div>
+
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="/src/index.html" class="nav-link">Home</a></li>
+        <li><a href="/src/catalog.html" class="nav-link">Catalog</a></li>
+        <li><a href="/src/myLibrary.html" class="nav-link">My Library</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="open-menu">MENU</button>
+
+    <div class="theme-switch">
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <span class="switch-bg"></span>
+        <span class="switch-knob"></span>
+
+        <svg class="icon-sun" width="13" height="13">
+          <use href="/src/img/sprite.svg#icon-light"></use>
+        </svg>
+        <svg class="icon-moon" width="13" height="13">
+          <use href="/src/img/sprite.svg#icon-dark"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="close-menu" id="close-menu">×</button>
+
+  <ul>
+    <li><a href="/src/index.html">HOME</a></li>
+    <li><a href="/src/catalog.html">CATALOG</a></li>
+    <li><a href="/src/myLibrary.html">MY LIBRARY</a></li>
+  </ul>
+</div>
+
+
+    <main>
+      <section class="container">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="description" x>
+        <h1 data-aos="fade-down" data-aos-duration="1000">
+          Let’s Make Your Own Cinema
+        </h1>
+        <p data-aos="fade-down" data-aos-duration="1000">
+          Is a guide to creating a personalized movie theater experience. You'll
+          need a projector, screen, and speakers. Decorate your space, choose
+          your films, and stock up on snacks for the full experience.
+        </p>
+      </div>
+      <button class="hero-btn" data-aos="fade-down" data-aos-duration="1000">
+        Get Started
+      </button>
+    </div>
+  </div>
+</section>
+<section class="container weekly-trends-section">
+  <div class="title-wrapper">
+    <h1 data-aos="fade-down" data-aos-duration="1000">WEEKLY TRENDS</h1>
+    <a href="/src/catalog.html" data-aos="fade-down" data-aos-duration="1000"
+      >See All</a
+    >
+  </div>
+  <ul
+    class="weekly-trends-list"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  ></ul>
+</section>
+<section class="container upcoming-section">
+  <h1 data-aos="fade-down" data-aos-duration="1000">Upcoming this month</h1>
+  <div id="upcoming-wrapper"></div>
+</section>
+
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
