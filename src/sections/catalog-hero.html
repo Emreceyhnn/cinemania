@@ -1,0 +1,37 @@
+<section
+  class="container catalog-hero-wrapper"
+  data-aos="fade-down"
+  data-aos-duration="1000"
+></section>
+<section
+  class="container catalog-filter"
+  data-aos="fade-down"
+  data-aos-duration="1000"
+>
+  <input
+    type="text"
+    class="catalog-filter-input"
+    placeholder="Search movies..."
+  />
+  <div class="catalog-filter-last-part">
+    <select class="catalog-filter-select"></select>
+    <button class="catalog-filter-btn" aria-label="Search">
+      <svg width="20" height="20">
+        <use href="/src/img/sprite.svg#icon-search-3"></use>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<section class="container catalog-list-container">
+  <ul class="catalog-movies-wrapper"></ul>
+  <div class="catalog-pagination" id="pagination"></div>
+
+  <div id="empty-catalog" class="empty-library">
+    <p>
+      OOPS...<br />
+      We are very sorry!<br />
+      We don’t have any results matching your search.
+    </p>
+  </div>
+</section>

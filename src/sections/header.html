@@ -1,0 +1,44 @@
+<header>
+  <div class="container">
+    <div class="logo-container">
+      <svg width="48" height="48">
+        <use href="/src/img/sprite.svg#icon-logo"></use>
+      </svg>
+      <h2>Cinemania</h2>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="/index.html" class="nav-link">Home</a></li>
+        <li><a href="/src/catalog.html" class="nav-link">Catalog</a></li>
+        <li><a href="/src/myLibrary.html" class="nav-link">My Library</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="open-menu">MENU</button>
+    <!-- THEME SWITCH (desktop) -->
+    <div class="theme-switch">
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <span class="switch-bg"></span>
+        <span class="switch-knob"></span>
+
+        <svg class="icon-sun" width="13" height="13">
+          <use href="/src/img/sprite.svg#icon-light"></use>
+        </svg>
+        <svg class="icon-moon" width="13" height="13">
+          <use href="/src/img/sprite.svg#icon-dark"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="close-menu" id="close-menu">×</button>
+
+  <ul>
+    <li><a href="/index.html">HOME</a></li>
+    <li><a href="/src/catalog.html">CATALOG</a></li>
+    <li><a href="/src/myLibrary.html">MY LIBRARY</a></li>
+  </ul>
+</div>

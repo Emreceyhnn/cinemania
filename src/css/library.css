@@ -1,0 +1,241 @@
+.library-hero {
+  margin-top: 60px !important;
+  max-width: 1280px;
+  width: 100%;
+  height: 720px;
+  background-image: url("../img/desktop/Library.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.library-hero-content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    83.16deg,
+    black 36.85%,
+    rgba(17, 17, 17, 0) 60.05%
+  );
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+}
+
+.description {
+  width: 464px;
+  height: 242px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.description > h1 {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.description > p {
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #f8f8f8;
+}
+
+.library-hero-content > button {
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 75px;
+  width: 130px;
+  height: 48px;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.library-hero-content > button:hover {
+  color: #f87719;
+  background: #fff;
+}
+
+.library-hero-content > button:hover::before {
+  opacity: 1;
+}
+
+.library-hero-content > button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(141deg, #ffc226, #f84119);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.library-section {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 15px;
+}
+
+.library-movies-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.empty-library {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-block: 50px;
+}
+
+.empty-library p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--antiColor);
+}
+
+.empty-btn {
+  border-radius: 74px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+}
+
+.library-select {
+  background: transparent;
+  border: 1px solid var(--antiColor);
+  color: var(--antiColor);
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  width: 300px;
+  outline: none;
+}
+
+.library-select {
+  width: 140px;
+  cursor: pointer;
+}
+
+.library-select > option {
+  color: black;
+}
+
+@media (max-width: 1280px) {
+  .library-hero {
+    background-image: url("../img/tablet/Library.png");
+    max-width: 780px;
+    width: 100%;
+    height: 432px;
+  }
+  .description {
+    width: 357px;
+  }
+  .description > h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 44px;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+  .description > p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+  .library-section {
+    margin: auto;
+    padding: 32px 15px;
+  }
+  .library-movies-wrapper {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 321px) {
+  .library-hero {
+    background-image: url("../img/mobile/Library.png");
+    max-width: 320px;
+    width: 100%;
+    height: 380px;
+  }
+  .description {
+    width: 250px;
+  }
+  .description > h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+  .description > p {
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
+  .library-section {
+    margin: auto;
+    padding: 32px 20px;
+  }
+  .library-movies-wrapper {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
