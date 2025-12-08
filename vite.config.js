@@ -3,6 +3,8 @@ import { resolve } from "path";
 import injectHTML from "vite-plugin-html-inject";
 import FullReload from "vite-plugin-full-reload";
 import SortCss from "postcss-sort-media-queries";
+import fs from "fs";
+import path from "path";
 
 export default defineConfig(({ command }) => {
   return {
@@ -46,6 +48,24 @@ export default defineConfig(({ command }) => {
       SortCss({
         sort: "mobile-first",
       }),
+      {
+        name: "add-headers",
+        closeBundle() {
+          const headersContent = `
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+        `;
+
+          const outPath = path.resolve(__dirname, "dist/_headers");
+          fs.writeFileSync(outPath, headersContent.trim());
+        },
+      },
     ],
   };
 });
