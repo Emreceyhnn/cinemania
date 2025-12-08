@@ -7,13 +7,11 @@ import {
 import { createStars } from "./home";
 import { createMoviePopup } from "./modal";
 
-/* ===================== GLOBAL STATE ===================== */
 let currentPage = 1;
 let totalPages = 1;
 let currentQuery = "";
 let currentYear = "";
 
-/* ===================== DOM ELEMENTS ===================== */
 let catalogHero;
 let catalogInput;
 let catalogSelect;
@@ -22,7 +20,6 @@ let catalogMoviesWrapper;
 let isEmpty;
 let pagination;
 
-/* ===================== SAFE DOM GETTER ===================== */
 function getDomElements() {
   catalogHero = document.querySelector(".catalog-hero-wrapper");
   catalogInput = document.querySelector(".catalog-filter-input");
@@ -33,7 +30,6 @@ function getDomElements() {
   pagination = document.querySelector("#pagination");
 }
 
-/* ===================== HERO ===================== */
 function createCatalogHero(movie) {
   return `
     <section class="container" >
@@ -88,10 +84,9 @@ export function createTrailerModal(videoKey) {
       if (e.target === modal) modal.remove();
     });
 
-    return; // burada biter
+    return;
   }
 
-  // ▶️ video varsa YouTube player açılır
   modal.innerHTML = `
     <div class="trailer-modal">
       <button class="trailer-close">×</button>
@@ -136,7 +131,6 @@ export async function loadCatalogHero() {
 
   catalogHero.innerHTML = markup;
 
-  /* ===== WATCH TRAILER BUTTON EVENT ===== */
   const trailerBtn = document.querySelector(".catalog-hero-btn");
 
   trailerBtn.addEventListener("click", async () => {
@@ -164,12 +158,11 @@ export async function loadCatalogHero() {
   };
 }
 
-/* ===================== YEAR OPTIONS ===================== */
 function populateYearOptions(
   startYear = new Date().getFullYear(),
   endYear = 1980
 ) {
-  if (!catalogSelect) return; // DOM yoksa durdur
+  if (!catalogSelect) return;
 
   const emptyOption = document.createElement("option");
   emptyOption.value = "";
@@ -184,7 +177,6 @@ function populateYearOptions(
   }
 }
 
-/* ===================== MOVIE RENDER ===================== */
 export function createWeeklyTrendCard(movie) {
   const IMG = `https://image.tmdb.org/t/p/${getScreenBreakpoint()}`;
 
@@ -228,7 +220,6 @@ function movieCardRenderer(list, location, genreMap) {
   location.innerHTML = markup;
 }
 
-/* ===================== FETCH MOVIES ===================== */
 export async function loadMovies(endpoint, page = 1, query = "", year = "") {
   currentPage = page;
   currentQuery = query.trim();
@@ -285,7 +276,6 @@ export async function loadMovies(endpoint, page = 1, query = "", year = "") {
   };
 }
 
-/* ===================== PAGINATION ===================== */
 function renderPagination() {
   const container = document.querySelector(".catalog-pagination");
   if (!container) return;
@@ -372,7 +362,6 @@ function attachPaginationEvents() {
     });
 }
 
-/* ===================== FILTER EVENTS ===================== */
 function attachFilterEvents() {
   if (catalogBtn)
     catalogBtn.addEventListener("click", () => {
@@ -395,7 +384,6 @@ function attachFilterEvents() {
     });
 }
 
-/* ===================== INITIALIZE ===================== */
 document.addEventListener("DOMContentLoaded", () => {
   getDomElements();
   loadCatalogHero();

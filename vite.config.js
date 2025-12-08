@@ -16,7 +16,6 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
 
       rollupOptions: {
-        /* PROJE KÖKÜNDEKİ HTML DOSYALARINI INPUT YAP */
         input: {
           main: resolve(__dirname, "index.html"),
           catalog: resolve(__dirname, "catalog.html"),

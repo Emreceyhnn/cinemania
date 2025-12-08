@@ -7,11 +7,8 @@ const loadMoreBtn = document.querySelector("#loadMore");
 
 const LIBRARY_KEY = "myLibrary";
 let sliceEnd = 20;
-let select; // SELECT SONRADAN ATANACAK
+let select;
 
-/* -------------------------------------------------------------------------- */
-/*                             CARD RENDER FUNCTION                           */
-/* -------------------------------------------------------------------------- */
 function movieCardRenderer(list, location) {
   const markup = list
     .map((movie) =>
@@ -29,7 +26,6 @@ function movieCardRenderer(list, location) {
 
   location.innerHTML = markup;
 
-  // POPUP EVENT
   location.onclick = (e) => {
     const li = e.target.closest(".weekly-trends-card");
     if (!li) return;
@@ -52,9 +48,6 @@ function movieCardRenderer(list, location) {
   };
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             LOCAL STORAGE FUNCS                            */
-/* -------------------------------------------------------------------------- */
 export function getLibrary() {
   return JSON.parse(localStorage.getItem(LIBRARY_KEY)) || [];
 }
@@ -76,9 +69,6 @@ export function isInLibrary(id) {
   return getLibrary().some((f) => f.id === id);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              GENRE SELECT POPULATE                         */
-/* -------------------------------------------------------------------------- */
 export async function genreSelect() {
   const movies = getLibrary();
   const genres = [...new Set(movies.flatMap((m) => m.genres))];
@@ -98,9 +88,6 @@ export async function genreSelect() {
   });
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              GET MOVIE CARD                                */
-/* -------------------------------------------------------------------------- */
 export async function getMovieCard() {
   const movies = getLibrary();
 
@@ -114,9 +101,6 @@ export async function getMovieCard() {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                          EMPTY LIBRARY CHECK                               */
-/* -------------------------------------------------------------------------- */
 function isLibraryEmpty() {
   const movies = getLibrary();
 
@@ -131,9 +115,6 @@ function isLibraryEmpty() {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                        FILTERED MOVIE RENDER                               */
-/* -------------------------------------------------------------------------- */
 function renderFilteredMovies(movies) {
   if (movies.length === 0) {
     movieListEl.innerHTML = "<p>No movies found for this genre.</p>";
@@ -152,9 +133,6 @@ function renderFilteredMovies(movies) {
   };
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             GENRE FILTER HANDLER                           */
-/* -------------------------------------------------------------------------- */
 function handleGenreFilter() {
   const selected = select.value;
   const movies = getLibrary();
@@ -170,9 +148,6 @@ function handleGenreFilter() {
   renderFilteredMovies(filteredMovies);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                 LIFECYCLE                                  */
-/* -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   select = document.getElementById("geenre-filtr");
 
