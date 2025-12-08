@@ -139,7 +139,7 @@ function createUpcomingMovieCard(movie, inLibrary) {
       </div> 
       <div class="up-row"> 
       <span class="up-label">Genre</span> 
-      <span class="up-info">${movie.genre_names.join(", ")}</span> 
+      <span class="up-info">${movie.genres.join(", ")}</span> 
       </div> 
       </div> 
       </div> 
