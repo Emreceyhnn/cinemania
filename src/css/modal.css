@@ -83,8 +83,6 @@
 }
 
 .popup-overview {
-  max-height: 200px;
-  overflow-y: auto;
   margin-top: 10px;
   color: var(--secondaryText);
   font-size: 14px;
@@ -157,6 +155,13 @@
   overflow: hidden;
 }
 
+@media (min-width: 1281px) {
+  .overviewWrapper {
+    height: 200px;
+    overflow-y: auto;
+  }
+}
+
 @media (max-width: 1280px) {
   .popup {
     width: 704px;
@@ -196,5 +201,9 @@
   .popup-close {
     top: 5px;
     right: 5px;
+  }
+  .overviewWrapper {
+    height: 80px;
+    overflow-y: auto;
   }
 }

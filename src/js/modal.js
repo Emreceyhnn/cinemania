@@ -40,8 +40,9 @@ export function createMoviePopup(movie) {
         </div>
 
         <h3 class="about-title">ABOUT</h3>
-
+        <div class="overviewWrapper">
         <p class="popup-overview">${movie.overview}</p>
+        </div> 
 
         <button class="up-btn" id="library-toggle-btn">
           ${inLibrary ? "Remove from my library" : "Add to my library"}
