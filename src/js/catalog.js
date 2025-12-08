@@ -283,7 +283,7 @@ function renderPagination() {
   let html = "";
 
   html += `<button class="pg-prev" ${currentPage === 1 ? "disabled" : ""}>
-    <svg width="28" height="28"><use href="/src/img/sprite.svg#icon-chevron-left"></use></svg>
+    <svg width="28" height="28"><use href="./src/img/sprite.svg#icon-chevron-left"></use></svg>
   </button>`;
 
   html += pageBtn(1);
@@ -302,7 +302,7 @@ function renderPagination() {
   html += `<button class="pg-next" ${
     currentPage === totalPages ? "disabled" : ""
   }>
-    <svg width="28" height="28"><use href="/src/img/sprite.svg#icon-chevron-right"></use></svg>
+    <svg width="28" height="28"><use href="./src/img/sprite.svg#icon-chevron-right"></use></svg>
   </button>`;
 
   container.innerHTML = html;
