@@ -4,8 +4,8 @@ import {
   ENDPOINTS,
   fetchTrailerKey,
 } from "./fetchApi";
-import { createStars } from "./home";
 import { createMoviePopup } from "./modal";
+import spriteUrl from "../img/sprite.svg";
 
 let currentPage = 1;
 let totalPages = 1;
@@ -55,6 +55,30 @@ function createCatalogHero(movie) {
       </div>
     </section>
   `;
+}
+
+function createStars(vote) {
+  const rating = vote / 2;
+
+  let full = Math.floor(rating);
+  let half = rating % 1 >= 0.5 ? 1 : 0;
+  let empty = 5 - full - half;
+
+  const fullStars =
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="${spriteUrl}#icon-star"></use></svg>`.repeat(
+      full
+    );
+
+  const halfStar = half
+    ? `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="${spriteUrl}#icon-star-half"></use></svg>`
+    : "";
+
+  const emptyStars =
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}"><use href="${spriteUrl}#icon-star-outline"></use></svg>`.repeat(
+      empty
+    );
+
+  return fullStars + halfStar + emptyStars;
 }
 
 export function createTrailerModal(videoKey) {
@@ -283,7 +307,7 @@ function renderPagination() {
   let html = "";
 
   html += `<button class="pg-prev" ${currentPage === 1 ? "disabled" : ""}>
-    <svg width="28" height="28"><use href="src/img/sprite.svg#icon-chevron-left"></use></svg>
+    <svg width="28" height="28"><use href="${spriteUrl}#icon-chevron-left"></use></svg>
   </button>`;
 
   html += pageBtn(1);
@@ -302,7 +326,7 @@ function renderPagination() {
   html += `<button class="pg-next" ${
     currentPage === totalPages ? "disabled" : ""
   }>
-    <svg width="28" height="28"><use href="src/img/sprite.svg#icon-chevron-right"></use></svg>
+    <svg width="28" height="28"><use href="${spriteUrl}#icon-chevron-right"></use></svg>
   </button>`;
 
   container.innerHTML = html;
@@ -407,4 +431,12 @@ function getScreenBreakpointHero() {
   if (width >= 780) return "w780";
   if (width >= 500) return "w342";
   return "w342";
+}
+function getScreenBreakpointStars() {
+  const width = window.innerWidth;
+
+  if (width >= 1280) return "18";
+  if (width >= 780) return "10";
+  if (width >= 500) return "14";
+  return "14";
 }

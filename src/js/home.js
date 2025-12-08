@@ -6,7 +6,7 @@ import spriteUrl from "../img/sprite.svg";
 const weeklyList = document.querySelector(".weekly-trends-list");
 const wrapper = document.getElementById("upcoming-wrapper");
 
-export function createStars(vote) {
+function createStars(vote) {
   const rating = vote / 2;
 
   let full = Math.floor(rating);
