@@ -26,12 +26,6 @@ export default defineConfig(({ command }) => {
             }
             return "[name].js";
           },
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name && assetInfo.name.endsWith(".html")) {
-              return "[name].[ext]";
-            }
-            return "assets/[name]-[hash][extname]";
-          },
         },
       },
       outDir: "../dist",
