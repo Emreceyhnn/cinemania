@@ -157,7 +157,6 @@ function handleGenreFilter() {
 
 document.addEventListener("DOMContentLoaded", () => {
   select = document.getElementById("genre-filter");
-  console.log(select);
   if (!select) return;
 
   select.addEventListener("change", handleGenreFilter);
