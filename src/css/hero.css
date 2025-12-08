@@ -10,6 +10,7 @@
   align-items: center;
   overflow: hidden;
   margin: 0 auto;
+  aspect-ratio: 16 / 9;
 }
 
 .hero-content {
@@ -360,6 +361,7 @@
     max-width: 780px;
     height: 432px;
     background-image: url("../img/tablet/Hero.webp");
+    aspect-ratio: 16 / 9;
   }
   .description {
     width: 357px;
@@ -440,6 +442,7 @@
     max-width: 320px;
     height: 380px;
     background-image: url("../img/mobile/Hero.webp");
+    aspect-ratio: 16 / 9;
   }
   .hero-content {
     padding: 18px;
