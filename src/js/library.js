@@ -142,14 +142,23 @@ function handleGenreFilter() {
   let filteredMovies = movies;
 
   if (selected !== "") {
-    filteredMovies = movies.filter((movie) => movie.genres.includes(selected));
+    filteredMovies = movies.filter((movie) => {
+      const genres = movie.genres || movie.genre_names || [];
+
+      // Array değilse array'e çevir
+      const genreArray = Array.isArray(genres) ? genres : [genres];
+
+      return genreArray.includes(selected);
+    });
   }
 
   renderFilteredMovies(filteredMovies);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  select = document.getElementById("geenre-filtr");
+  select = document.getElementById("genre-filter");
+  console.log(select);
+  if (!select) return;
 
   select.addEventListener("change", handleGenreFilter);
 

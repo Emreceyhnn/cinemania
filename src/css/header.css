@@ -137,7 +137,7 @@ header > .container {
   left: 39px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   header {
     max-width: 780px;
   }

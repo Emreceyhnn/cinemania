@@ -236,7 +236,7 @@ function movieCardRenderer(list, location, genreMap) {
         overview: movie.overview,
         year: movie.release_date?.split("-")[0] || "—",
         vote_average: movie.vote_average,
-        genre_names: movie.genre_ids.map((id) => genreMap[id]).join(", "),
+        genres: movie.genre_ids.map((id) => genreMap[id]).join(", "),
       })
     )
     .join("");

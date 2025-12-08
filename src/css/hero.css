@@ -355,7 +355,7 @@
   z-index: -1;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   .hero {
     max-width: 780px;
     height: 432px;

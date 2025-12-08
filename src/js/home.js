@@ -56,6 +56,7 @@ export function createWeeklyTrendCard(movie) {
 }
 
 export async function loadWeeklyTrends() {
+  if (!weeklyList) return;
   const data = await fetchMovies(ENDPOINTS.TRENDING_WEEK);
   const genreMap = await fetchGenres();
 
@@ -138,7 +139,7 @@ function createUpcomingMovieCard(movie, inLibrary) {
       </div> 
       <div class="up-row"> 
       <span class="up-label">Genre</span> 
-      <span class="up-info">${movie.genres.join(", ")}</span> 
+      <span class="up-info">${movie.genre_names.join(", ")}</span> 
       </div> 
       </div> 
       </div> 
@@ -157,6 +158,7 @@ function createUpcomingMovieCard(movie, inLibrary) {
 }
 
 export async function loadUpcomingMovie() {
+  if (!wrapper) return;
   const data = await fetchMovies(ENDPOINTS.UPCOMING_MOVIES);
   const genreMap = await fetchGenres();
 
