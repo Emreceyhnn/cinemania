@@ -229,5 +229,5 @@ function getScreenBreakpointStars() {
 function getScreenBreakpointSlicer() {
   const width = window.innerWidth;
 
-  return width > 321 ? 3 : 1;
+  return width > 500 ? 3 : 1;
 }
