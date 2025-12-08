@@ -1,6 +1,7 @@
 import { fetchMovies, fetchGenres, ENDPOINTS } from "./fetchApi.js";
 import { addFilm, isInLibrary, removeFilm } from "./library.js";
 import { createMoviePopup } from "./modal.js";
+import spriteUrl from "../img/sprite.svg";
 
 const weeklyList = document.querySelector(".weekly-trends-list");
 const wrapper = document.getElementById("upcoming-wrapper");
@@ -13,16 +14,16 @@ export function createStars(vote) {
   let empty = 5 - full - half;
 
   const fullStars =
-    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="./src/img/sprite.svg#icon-star"></use></svg>`.repeat(
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="${spriteUrl}#icon-star"></use></svg>`.repeat(
       full
     );
 
   const halfStar = half
-    ? `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="./src/img/sprite.svg#icon-star-half"></use></svg>`
+    ? `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="${spriteUrl}#icon-star-half"></use></svg>`
     : "";
 
   const emptyStars =
-    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}"><use href="/cinemania/src/img/sprite.svg#icon-star-outline"></use></svg>`.repeat(
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}"><use href="${spriteUrl}#icon-star-outline"></use></svg>`.repeat(
       empty
     );
 
