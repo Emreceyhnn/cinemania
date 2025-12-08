@@ -39,9 +39,7 @@ export function createWeeklyTrendCard(movie) {
       180deg,
       rgba(0, 0, 0, 0) 63.48%,
       rgba(0, 0, 0, 0.9) 92.16%
-    ), url('${IMG}${
-    movie.poster_path
-  }')" data-aos="zoom-in" data-aos-duration="1000">
+    ), url('${IMG}${movie.poster_path}')" >
 
       <div class="weekly-trends-card-desc">
         <h5>${movie.title}</h5>
