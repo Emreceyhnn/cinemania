@@ -14,7 +14,11 @@ export default defineConfig(({ command }) => {
     base: "/cinemania/",
     build: {
       sourcemap: true,
-
+      define: {},
+      css: {},
+      esbuild: {},
+      resolve: {},
+      optimizeDeps: {},
       rollupOptions: {
         input: {
           main: resolve(__dirname, "index.html"),
