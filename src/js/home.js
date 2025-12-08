@@ -13,16 +13,16 @@ export function createStars(vote) {
   let empty = 5 - full - half;
 
   const fullStars =
-    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="/src/img/sprite.svg#icon-star"></use></svg>`.repeat(
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="src/img/sprite.svg#icon-star"></use></svg>`.repeat(
       full
     );
 
   const halfStar = half
-    ? `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="/src/img/sprite.svg#icon-star-half"></use></svg>`
+    ? `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}" fill="#ffc226"><use href="src/img/sprite.svg#icon-star-half"></use></svg>`
     : "";
 
   const emptyStars =
-    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}"><use href="/src/img/sprite.svg#icon-star-outline"></use></svg>`.repeat(
+    `<svg width="${getScreenBreakpointStars()}" height="${getScreenBreakpointStars()}"><use href="src/img/sprite.svg#icon-star-outline"></use></svg>`.repeat(
       empty
     );
 
