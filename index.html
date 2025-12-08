@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinemania</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,10 +15,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <load src="/sections/header.html" />
-    <main><load src="/sections/library-hero.html" /></main>
+    <load src="src/sections/header.html" />
 
-    <script type="module" src="./src/main.js"></script>
+    <main>
+      <load src="src/sections/hero.html" />
+    </main>
+    <script type="module" src="/src/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

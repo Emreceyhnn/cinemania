@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { glob } from "glob";
+import { resolve } from "path";
 import injectHTML from "vite-plugin-html-inject";
 import FullReload from "vite-plugin-full-reload";
 import SortCss from "postcss-sort-media-queries";
@@ -9,18 +9,27 @@ export default defineConfig(({ command }) => {
     define: {
       [command === "serve" ? "global" : "_global"]: {},
     },
-    root: "src",
+
     base: "/cinemania/",
+
     build: {
       sourcemap: true,
+
       rollupOptions: {
-        input: glob.sync("./src/*.html"),
+        /* PROJE KÖKÜNDEKİ HTML DOSYALARINI INPUT YAP */
+        input: {
+          main: resolve(__dirname, "index.html"),
+          catalog: resolve(__dirname, "catalog.html"),
+          library: resolve(__dirname, "myLibrary.html"),
+        },
+
         output: {
           manualChunks(id) {
             if (id.includes("node_modules")) {
               return "vendor";
             }
           },
+
           entryFileNames: (chunkInfo) => {
             if (chunkInfo.name === "commonHelpers") {
               return "commonHelpers.js";
@@ -29,9 +38,11 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: "../dist",
+
+      outDir: "dist",
       emptyOutDir: true,
     },
+
     plugins: [
       injectHTML(),
       FullReload(["./src/**/**.html"]),
