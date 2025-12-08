@@ -476,10 +476,7 @@
     width: 280px;
     height: 406px;
   }
-  .weekly-trends-card:nth-child(2),
-  .weekly-trends-card:nth-child(3) {
-    display: none;
-  }
+
   .weekly-trends-card-desc {
     max-width: 110px;
   }
