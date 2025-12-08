@@ -35,6 +35,20 @@ npm run build
 
 This can be deployed automatically to GitHub Pages.
 
+The project is fully responsive and adapts seamlessly across all major screen sizes.
+A clean and minimal breakpoint structure is used to ensure consistent layout, spacing, and typography on every device.
+
+Breakpoints used in the project:
+
+1280px  — Desktop
+Optimized for large screens with full layout, extended spacing, and enhanced visuals.
+
+780px  — Tablet
+Adjusted component scaling, balanced typography, and improved readability for medium-sized screens.
+
+320px — Mobile
+Mobile-first layout with simplified structure, larger touch targets, and optimized vertical spacing.
+
 ⚡ Performance Tests (Lighthouse)
 
 Below are mobile and desktop Lighthouse results after optimizations.
