@@ -435,7 +435,7 @@
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 480px) {
   .hero {
     max-width: 320px;
     height: 380px;
