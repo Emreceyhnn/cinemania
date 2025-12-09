@@ -106,7 +106,7 @@ function formatDate(dateString) {
 }
 
 function createUpcomingMovieCard(movie, inLibrary) {
-  const IMG = `https://image.tmdb.org/t/p/${getScreenBreakpointHero()}?format=webp`;
+  const IMG = `https://image.tmdb.org/t/p/${getScreenBreakpointHero()}`;
 
   return `
      <div class="upcoming-card" data-aos="fade-down" data-aos-duration="1000">

@@ -214,7 +214,7 @@ export function createWeeklyTrendCard(movie) {
       
       <div class="weekly-trends-card-desc">
         <h5>${movie.title}</h5>
-        <p>${movie.genre_names} | ${movie.year}</p>
+        <p>${movie.genres} | ${movie.year}</p>
       </div>
 
       <div class="weekly-trends-rating">
